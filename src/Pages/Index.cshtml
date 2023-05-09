@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{    
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <div class="container">
+        <h1>Welcome to testtuesapp</h1>
+        <p>We're working hard to bring you an amazing website. Stay tuned for updates!</p>
+        <button id="confettiButton">Click Me!</button>
+    </div>
+    <hr />
+    <div>Host operating system: @Model.OSVersion</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const jsConfetti = new JSConfetti();
+        const confettiButton = document.getElementById('confettiButton');
+
+        confettiButton.addEventListener('click', function () {
+            jsConfetti.addConfetti({
+            confettiColors: ["#fcf403", "#62fc03", "#f4fc03", "#03e7fc", "#03fca5", "#a503fc", "#fc03ad", "#fc03c2"],
+            confettiRadius: 10,
+            confettiNumber: 400,
+            });
+        });
+        });
+    </script>
+</div>
+`
